@@ -1,18 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ["class"], // Enable dark mode using the "class" strategy
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./src/**/*.{js,jsx,ts,tsx}", // Look for classes in the "src" folder for React
+    "./public/index.html",       // Include classes from the HTML entry file
   ],
   theme: {
     container: {
-      center: true,
-      padding: "2rem",
+      center: true, // Center all containers
+      padding: "2rem", // Default padding for containers
       screens: {
-        "2xl": "1400px",
+        "2xl": "1400px", // Max width for extra-large screens
       },
     },
     extend: {
@@ -52,9 +50,9 @@ module.exports = {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "var(--radius)", // Custom large radius
+        md: "calc(var(--radius) - 2px)", // Medium radius
+        sm: "calc(var(--radius) - 4px)", // Small radius
       },
       keyframes: {
         "accordion-down": {
@@ -67,10 +65,12 @@ module.exports = {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-down": "accordion-down 0.2s ease-out", // Smooth accordion opening
+        "accordion-up": "accordion-up 0.2s ease-out", // Smooth accordion closing
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"), // Animation plugin for Tailwind
+  ],
 };
